@@ -16,6 +16,10 @@ const mockPosts = [
 ];
 
 // "/"로 들어왔을 때 동작되는 일꾼
+// app.get도 기능을 동작시키는 함수 (메소드)
+// 그 안에 들어가는 매개변수 자리의 함수에는
+// app.get이 그 함수가 동작될 때 제공되는 정보가 들어감
+// app.get("/", (req, res) => {})
 app.get("/", (req, res) => {
     // res.send() 메소드는 string을 내보낼 때 사용
     res.send("여기는 루트입니다.");
