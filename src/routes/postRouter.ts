@@ -30,7 +30,7 @@ router.get("/posts/:id", (req, res) => {
 
     // 1. 정상
     // targetId를 가지고, mockPosts에서 해당하는 글 (객체)를 찾아서 빈 박스에 넣어야 함)
-    const result = mockPosts.find((value) => {
+    const result = mockPosts.find(value => {
         // 첫 순회 : value = { id: 8, title: "...", content: "..." }
         // 2 순회 : value = { id: 3, title: "...", content: "..." }
         // 3 순회 : value = { id: 5, title: "...", content: "..." }
@@ -51,3 +51,11 @@ router.get("/posts/:id", (req, res) => {
 });
 
 export default router;
+
+/* (req, res) => {
+        if (!result) {
+            return       -> 이 return 값이 없으면, 이 return에서 종료
+         }
+         return          -> 이 return 값이 있으면, 이 return에서 종료
+     }
+     */
