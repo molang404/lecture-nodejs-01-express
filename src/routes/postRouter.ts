@@ -30,7 +30,7 @@ router.get("/posts/:id", (req, res) => {
 
     // 1. 정상
     // targetId를 가지고, mockPosts에서 해당하는 글 (객체)를 찾아서 빈 박스에 넣어야 함)
-    const result = mockPosts.find(value => {
+    const result = mockPosts.find((value) => {
         // 첫 순회 : value = { id: 8, title: "...", content: "..." }
         // 2 순회 : value = { id: 3, title: "...", content: "..." }
         // 3 순회 : value = { id: 5, title: "...", content: "..." }
@@ -43,11 +43,9 @@ router.get("/posts/:id", (req, res) => {
     if (!result) {
         return res.status(404).json({ message: "Posts not found." });   // 에러, 404 not found
         // .json은 우리가 보내는 자바스크립트 객체를 json 형식으로 바꿔주는 일
-        // 우리가 json() 안에 매개변수에 넣어준 건, 자바스크립트 객체 => JSON 문법이 아니라 js 문법
+        // 우리가 json() 안에 매개변수에 넣어준 건, 자바스크립트 객체 => JSON 문법이 아니라, js 문법
     }
-    res.json(
-        { data: result }
-    );
+    res.json({ data: result });
 });
 
 export default router;
@@ -59,3 +57,4 @@ export default router;
          return          -> 이 return 값이 있으면, 이 return에서 종료
      }
      */
+
